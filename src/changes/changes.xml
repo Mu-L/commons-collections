@@ -7,7 +7,7 @@
      (the "License"); you may not use this file except in compliance with
      the License.  You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+          https://www.apache.org/licenses/LICENSE-2.0
 
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,8 +24,19 @@
   <body>
   <release version="4.5.1" date="YYYY-MM-DD" description="This is a feature and maintenance release. Java 8 or later is required.">
     <!-- FIX -->
+    <action type="fix" dev="ggregory" due-to="Gary Gregory">org.apache.commons.collections4.map.AbstractReferenceMap.ReferenceEntry.toReference(ReferenceStrength, T, int) now throws IllegalArgumentException instead of Error.</action>
+    <action type="fix" dev="ggregory" due-to="Eric Hubert, Gary Gregory">Remove deprecation annotation of org.apache.commons.collections4.Factory; this will be deprecated in 5.0 in favor of java.util.function.Supplier.</action>
+    <action type="fix" dev="ggregory" due-to="Eric Hubert, Gary Gregory">Remove deprecation annotation of org.apache.commons.collections4.Predicate; this will be deprecated in 5.0 in favor of java.util.function.Predicate.</action>
+    <action type="fix" dev="ggregory" due-to="Eric Hubert, Gary Gregory">Remove deprecation annotation of org.apache.commons.collections4.Transformer; this will be deprecated in 5.0 in favor of java.util.function.Function.</action>
+    <action type="fix" dev="ggregory" due-to="Eric Hubert, Gary Gregory">Remove deprecation annotation of org.apache.commons.collections4.Closure; this will be deprecated in 5.0 in favor of java.util.function.Consumer.</action>
+    <action type="fix" dev="ggregory" due-to="Sebastian Götz, Gary Gregory" issue="COLLECTIONS-874">MapUtils.getLongValue(Map, K, Function) returns a byte instead of a long.</action>
+    <action type="fix" dev="ggregory" due-to="Gary Gregory">Fix exception message in org.apache.commons.collections4.functors.FunctorUtils.validate(Consumer...)</action>
     <!-- ADD -->
     <!-- UPDATE -->
+    <action type="update" dev="ggregory" due-to="Gary Gregory, Dependabot">Bump org.apache.commons:commons-parent from 81 to 84 #612.</action>
+    <action type="update" dev="ggregory" due-to="Gary Gregory">Bump com.google.guava:guava-testlib from 33.3.1-jre to 33.4.8-jre.</action>
+    <action type="update" dev="ggregory" due-to="Gary Gregory">Bump PMD from 7.8.0 to 7.13.0 (now inherited from parent POM).</action>
+    <action type="update" dev="ggregory" due-to="Gary Gregory">Bump org.easymock:easymock from 5.5.0 to 5.6.0 #617.</action>
   </release>
   <release version="4.5.0" date="2025-04-19" description="This is a feature and maintenance release. Java 8 or later is required.">
     <!-- FIX -->

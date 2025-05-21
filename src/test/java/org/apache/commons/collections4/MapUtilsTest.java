@@ -6,7 +6,7 @@
  * (the "License"); you may not use this file except in compliance with
  * the License.  You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -416,6 +416,8 @@ public class MapUtilsTest {
         assertEquals(val, MapUtils.getByteValue(in, "key"), 0);
         assertEquals(val, MapUtils.getByteValue(in, "noKey", val), 0);
         assertEquals(val, MapUtils.getByteValue(in, "noKey", key -> (byte) 100), 0);
+        assertEquals(Byte.MIN_VALUE, MapUtils.getByteValue(in, "noKey", Byte.MIN_VALUE), 0);
+        assertEquals(Byte.MAX_VALUE, MapUtils.getByteValue(in, "noKey", Byte.MAX_VALUE), 0);
         assertEquals(0, MapUtils.getByteValue(in, "noKey"), 0);
         assertEquals(val, MapUtils.getByte(in, "key", val), 0);
         assertEquals(val, MapUtils.getByte(in, "noKey", val), 0);
@@ -436,6 +438,9 @@ public class MapUtilsTest {
         assertEquals(2.0, MapUtils.getDoubleValue(in, "key"), 0);
         assertEquals(1.0, MapUtils.getDoubleValue(in, "noKey", 1.0), 0);
         assertEquals(5.0, MapUtils.getDoubleValue(in, "noKey", key -> 5.0D), 0);
+        assertEquals(Double.MIN_VALUE, MapUtils.getDoubleValue(in, "noKey", Double.MIN_VALUE), 0);
+        assertEquals(Double.MIN_NORMAL, MapUtils.getDoubleValue(in, "noKey", Double.MIN_NORMAL), 0);
+        assertEquals(Double.MAX_VALUE, MapUtils.getDoubleValue(in, "noKey", Double.MAX_VALUE), 0);
 
         assertEquals(0, MapUtils.getDoubleValue(in, "noKey"), 0);
         assertEquals(2.0, MapUtils.getDouble(in, "key", 0.0), 0);
@@ -458,6 +463,9 @@ public class MapUtilsTest {
         assertEquals(2.0, MapUtils.getFloatValue(in, "key"), 0);
         assertEquals(1.0, MapUtils.getFloatValue(in, "noKey", 1.0f), 0);
         assertEquals(1.0, MapUtils.getFloatValue(in, "noKey", key -> 1.0F), 0);
+        assertEquals(Float.MIN_VALUE, MapUtils.getFloatValue(in, "noKey", Float.MIN_VALUE), 0);
+        assertEquals(Float.MIN_NORMAL, MapUtils.getFloatValue(in, "noKey", Float.MIN_NORMAL), 0);
+        assertEquals(Float.MAX_VALUE, MapUtils.getFloatValue(in, "noKey", Float.MAX_VALUE), 0);
         assertEquals(0, MapUtils.getFloatValue(in, "noKey"), 0);
         assertEquals(2.0, MapUtils.getFloat(in, "key", 0.0f), 0);
         assertEquals(1.0, MapUtils.getFloat(in, "noKey", 1.0f), 0);
@@ -479,6 +487,8 @@ public class MapUtilsTest {
         assertEquals(2, MapUtils.getIntValue(in, "key"), 0);
         assertEquals(0, MapUtils.getIntValue(in, "noKey", 0), 0);
         assertEquals(0, MapUtils.getIntValue(in, "noKey", key -> 0), 0);
+        assertEquals(Integer.MIN_VALUE, MapUtils.getIntValue(in, "noKey", Integer.MIN_VALUE), 0);
+        assertEquals(Integer.MAX_VALUE, MapUtils.getIntValue(in, "noKey", Integer.MAX_VALUE), 0);
         assertEquals(0, MapUtils.getIntValue(in, "noKey"), 0);
         assertEquals(2, MapUtils.getInteger(in, "key", 0), 0);
         assertEquals(0, MapUtils.getInteger(in, "noKey", 0), 0);
@@ -499,6 +509,8 @@ public class MapUtilsTest {
         assertEquals(2.0, MapUtils.getLongValue(in, "key"), 0);
         assertEquals(1, MapUtils.getLongValue(in, "noKey", 1L), 0);
         assertEquals(1, MapUtils.getLongValue(in, "noKey", key -> 1L), 0);
+        assertEquals(Long.MIN_VALUE, MapUtils.getLongValue(in, "noKey", key -> Long.MIN_VALUE), 0);
+        assertEquals(Long.MAX_VALUE, MapUtils.getLongValue(in, "noKey", key -> Long.MAX_VALUE), 0);
         assertEquals(0, MapUtils.getLongValue(in, "noKey"), 0);
         assertEquals(2.0, MapUtils.getLong(in, "key", 0L), 0);
         assertEquals(1, MapUtils.getLong(in, "noKey", 1L), 0);
@@ -576,6 +588,8 @@ public class MapUtilsTest {
         assertEquals(val, MapUtils.getShortValue(in, "key"), 0);
         assertEquals(val, MapUtils.getShortValue(in, "noKey", val), 0);
         assertEquals(val, MapUtils.getShortValue(in, "noKey", key -> val), 0);
+        assertEquals(Short.MIN_VALUE, MapUtils.getShortValue(in, "noKey", Short.MIN_VALUE), 0);
+        assertEquals(Short.MAX_VALUE, MapUtils.getShortValue(in, "noKey", Short.MAX_VALUE), 0);
         assertEquals(0, MapUtils.getShortValue(in, "noKey"), 0);
         assertEquals(val, MapUtils.getShort(in, "key", val), 0);
         assertEquals(val, MapUtils.getShort(in, "noKey", val), 0);
